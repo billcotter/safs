@@ -1,47 +1,31 @@
-# Astro Starter Kit: Minimal
+# St. Augustine Film Society Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Local film society website built with AstroJS, featuring movie information, member management, and event scheduling.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Getting Started
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Clone the repository
+2. Copy .env.template to .env and fill in your credentials
+3. Install dependencies: \`pnpm install\`
+4. Run development server: \`pnpm dev\`
 
-## 🚀 Project Structure
+## Scripts
 
-Inside of your Astro project, you'll see the following folders and files:
+- \`pnpm dev\`: Start development server
+- \`pnpm build\`: Build for production
+- \`pnpm preview\`: Preview production build
+- \`pnpm test\`: Run all tests
+- \`pnpm test:e2e\`: Run end-to-end tests
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Technologies
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- AstroJS
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+- KeyStatic CMS
+- Turso/LibSQL
+- Drizzel ORM
+- HTMX
+- Alpine.js
+- Playwright

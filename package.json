@@ -7,11 +7,28 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "test": "playwright test",
+    "test:e2e": "playwright test",
+    "astro": "astro",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install",
+    "lint:secrets": "secretlint \"**/*\""
   },
+  
   "dependencies": {
-    "astro": "^4.16.13",
     "@astrojs/check": "^0.9.4",
-    "typescript": "^5.6.3"
+    "@sentry/astro": "8.38.0",
+    "astro": "^4.16.13",
+    "axios": "1.7.7",
+    "typescript": "^5.6.3",
+    "web-vitals": "4.2.4"
+  },
+  "devDependencies": {
+    "@netlify/functions": "2.8.2",
+    "@playwright/test": "1.48.2",
+    "@secretlint/secretlint-rule-preset-recommend": "9.0.0",
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
+    "secretlint": "9.0.0"
   }
 }
