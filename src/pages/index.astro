@@ -1,14 +1,98 @@
 ---
-/**
- * @fileoverview Home page component
- * @component HomePage
- */
-
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Welcome to SAFS">
-  <main>
-    <h1>Welcome to St. Augustine Film Society</h1>
+<BaseLayout title="St. Augustine Film Society">
+  <main class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-4 py-12 md:py-20">
+      <div class="flex flex-col items-center justify-center space-y-6 md:space-y-8 text-center">
+        <!-- Movie Camera SVG -->
+        <div class="w-16 h-16 md:w-24 md:h-24 mb-4 md:mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-yellow-500">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            <circle cx="8" cy="12" r="1" fill="currentColor" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+          </svg>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2 md:mb-4">
+          St. Augustine Film Society
+        </h1>
+        
+        <div class="flex items-center space-x-3 md:space-x-4 mb-6 md:mb-8">
+          <!-- Star SVG -->
+          <svg class="w-4 h-4 md:w-6 md:h-6 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          <span class="text-lg md:text-xl font-light">Welcome to our New Website!</span>
+          <!-- Star SVG -->
+          <svg class="w-4 h-4 md:w-6 md:h-6 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+        </div>
+
+        <!-- Coming Soon Message -->
+        <div class="space-y-4 max-w-2xl mx-auto px-4">
+          <p class="text-xl md:text-2xl font-semibold text-yellow-500">
+            Coming Soon!
+          </p>
+          <p class="text-base md:text-lg text-gray-300 leading-relaxed">
+            For our current schedule of films, please visit our existing website:
+          </p>
+          <a 
+            href="https://staugustinefilmsociety.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block text-blue-400 hover:text-blue-300 transition-colors duration-200 underline text-base md:text-lg"
+          >
+            staugustinefilmsociety.com
+          </a>
+        </div>
+
+        <!-- Film Projector SVG -->
+        <div class="w-24 h-24 md:w-32 md:h-32 opacity-50 mt-8">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+            <circle cx="12" cy="12" r="3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v6M9 12h6" />
+          </svg>
+        </div>
+
+        <!-- Film Strip Design - Responsive -->
+        <div class="flex justify-center space-x-1 md:space-x-2 mt-6 md:mt-8 overflow-hidden">
+          {[...Array(6)].map(() => (
+            <div class="w-3 h-12 md:w-4 md:h-16 bg-gray-700 rounded-sm border border-gray-600"></div>
+          ))}
+        </div>
+      </div>
+    </div>
   </main>
 </BaseLayout>
+
+<style>
+  main {
+    background-image: 
+      linear-gradient(to bottom, 
+        rgba(17, 24, 39, 0.95), 
+        rgba(31, 41, 55, 0.95)
+      ),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.857 8.485 15.272 9.9l7.9-7.9h-.83L27.5 0h-5.157zm13.314 0L27.5 8.485 28.915 9.9l7.9-7.9h-2.828L37.157 0h-1.5zM2.828 0L0 2.828 1.414 4.243 9.9 0H2.828zm51.415 0h.828l-1.414 1.414-.829-.828L51.415 0zm-3.657 0l1.414 1.414L56.485 0h-5.657z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .w-16, .w-24 {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Responsive hover effects - only on devices that can hover */
+  @media (hover: hover) {
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+</style>
