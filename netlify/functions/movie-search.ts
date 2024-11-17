@@ -1,8 +1,13 @@
-// netlify/functions/movie-search.ts
-import type { Handler } from '@netlify/functions';
+import type { Handler, HandlerEvent } from '@netlify/functions';
 import axios from 'axios';
 
-export const handler: Handler = async (event) => {
+declare const process: {
+  env: {
+    OMDB_API_KEY: string;
+  };
+};
+
+export const handler: Handler = async (event: HandlerEvent) => {
   try {
     const { query } = event.queryStringParameters || {};
 
