@@ -11,10 +11,8 @@
     "test:e2e": "playwright test",
     "astro": "astro",
     "type-check": "tsc --noEmit",
-    "prepare": "husky install",
     "lint:secrets": "secretlint \"**/*\""
   },
-  
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@sentry/astro": "8.38.0",
@@ -27,7 +25,6 @@
     "@netlify/functions": "2.8.2",
     "@playwright/test": "1.48.2",
     "@secretlint/secretlint-rule-preset-recommend": "9.0.0",
-    "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "secretlint": "9.0.0"
   }
