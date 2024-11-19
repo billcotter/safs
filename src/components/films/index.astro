@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FilmList from '../../components/FilmList.astro';
+import { fetchMoviesList } from '../../lib/utils/fetchSheets';
+import { enrichFilmList } from '../../lib/services/filmService';
+import type { EnrichedFilm } from '../../types/films';
+
+let films: EnrichedFilm[] = [];
+let error = '';
+let isLoading = true;
+
+try {
+  const basicFilms = await fetchMoviesList();
+  films = await enrichFilmList(basicFilms);
+  isLoading = false;
+} catch (e) {
+  console.error('Error fetching films:', e);
+  error = 'Failed to load films. Please try again later.';
+  isLoading = false;
+}
+---
+
+<BaseLayout title="SAFS - Films">
+  <main class="min-h-screen bg-gray-50 py-8">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+        St. Augustine Film Society Films
+      </h1>
+      
+      <FilmList 
+        films={films}
+        error={error}
+        isLoading={isLoading}
+      />
+    </div>
+  </main>
+</BaseLayout>

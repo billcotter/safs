@@ -16,6 +16,16 @@ const { title, description = "St. Augustine Film Society" } = Astro.props;
     <meta name="description" content={description} />
   </head>
   <body>
+    <nav class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">SAFS</a>
+        <div class="space-x-4">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/films" class="hover:text-gray-300">Movies</a>
+        </div>
+      </div>
+    </nav>
+    
     <slot />
   </body>
 </html>

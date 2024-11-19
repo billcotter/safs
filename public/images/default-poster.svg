@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="450" viewBox="0 0 300 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="450" fill="#E5E7EB"/>
+  <text x="150" y="225" font-family="Arial" font-size="24" fill="#6B7280" text-anchor="middle">
+    No Poster Available
+  </text>
+  <path d="M150 160 L180 200 H120 Z" fill="#6B7280"/>
+  <rect x="120" y="200" width="60" height="40" fill="#6B7280"/>
+</svg>
