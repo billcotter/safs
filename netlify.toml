@@ -1,6 +1,26 @@
 [build]
 publish = "dist"
 command = "yarn build"
+functions = "netlify/functions"
 
 [build.environment]
 NODE_VERSION = "20"
+
+# Production context (staugustinefilmsociety)
+[context.production]
+  environment = { NODE_ENV = "production" }
+  command = "yarn build"
+
+# Development context (safs-dev)
+[context.dev]
+  environment = { NODE_ENV = "development" }
+  command = "yarn build"
+
+# Enable Edge Functions
+[[edge_functions]]
+  function = "edge-functions/*"
+
+# For serverless functions
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
