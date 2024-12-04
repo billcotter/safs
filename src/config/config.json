@@ -1,30 +1,24 @@
 {
   "site": {
-    "title": "Astroplate",
-    "base_url": "https://astroplate.netlify.app",
+    "title": "St. Augustine Film Society",
+    "base_url": "https://staugustinefilmsociety.org",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
-    "logo_height": "30",
-    "logo_text": "Astroplate"
+    "logo_width": "200",
+    "logo_height": "38",
+    "logo_text": "SAFS"
   },
 
   "settings": {
-    "search": true,
-    "sticky_header": true,
-    "theme_switcher": true,
-    "default_theme": "system",
-    "pagination": 2,
-    "summary_length": 200,
-    "blog_folder": "blog"
+    "pagination": 10,
+    "summary_length": 200
   },
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "Copyright © 2024 St. Augustine Film Society"
   },
 
   "navigation_button": {
@@ -40,8 +34,8 @@
   },
 
   "metadata": {
-    "meta_author": "zeon.studio",
+    "meta_author": "St. Augustine Film Society",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_description": "St. Augustine Film Society - A community of film enthusiasts"
   }
 }

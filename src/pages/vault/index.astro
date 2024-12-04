@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Base from "@/layouts/Base.astro";
+import { Image } from 'astro:assets';
+
+// Get all movies and sort by year
+const movies = await getCollection('movies');
+const sortedMovies = movies.sort((a, b) => b.data.year - a.data.year);
+
+// Get unique genres
+const genres = await getCollection('genres');
+---
+
+<Base title="The Vault | St. Augustine Film Society">
+  <section class="section">
+    <div class="container">
+      <h1 class="text-3xl font-bold mb-8">The Vault</h1>
+      
+      {/* Genre Filter */}
+      <div class="mb-8">
+        <h2 class="text-xl mb-4">Filter by Genre</h2>
+        <div class="flex flex-wrap gap-2">
+          {genres.map((genre) => (
+            <button
+              class="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300"
+              data-genre={genre.data.name}
+            >
+              {genre.data.name}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Movie Grid */}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedMovies.map((movie) => (
+          <article class="movie-card bg-white rounded-lg shadow-lg overflow-hidden">
+            <a href={`/vault/movies/${movie.slug}`}>
+              {movie.data.posterPath ? (
+                <Image
+                  src={`https://image.tmdb.org/t/p/w500${movie.data.posterPath}`}
+                  alt={movie.data.title}
+                  width={500}
+                  height={750}
+                  class="w-full h-auto"
+                />
+              ) : (
+                <div class="bg-gray-200 w-full aspect-[2/3]" />
+              )}
+              <div class="p-4">
+                <h2 class="text-xl font-bold mb-2">{movie.data.title}</h2>
+                <p class="text-gray-600 mb-2">{movie.data.year}</p>
+                <p class="text-sm line-clamp-3">{movie.data.plot}</p>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base> 

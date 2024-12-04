@@ -1,0 +1,69 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getEntryBySlug } from "astro:content";
+import { markdownify } from "@/lib/utils/textConverter";
+import PageHeader from "@/partials/PageHeader.astro";
+import { Image } from "astro:assets";
+import { FaCalendar } from "react-icons/fa";
+
+const entry = await getEntryBySlug("calendar", "index");
+const { title, description, meta_title } = entry.data;
+const { Content } = await entry.render();
+---
+
+<Base title={meta_title || title}>
+  <PageHeader title={title} />
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <!-- Upcoming Events -->
+            <div class="mb-12">
+              <h2 class="h3 mb-8">Featured Events</h2>
+              
+              <!-- Event Card 1 -->
+              <div class="mb-8 rounded-lg border border-border p-6 shadow-lg">
+                <div class="flex items-center gap-4">
+                  <div class="text-dark">
+                    <FaCalendar size={24} />
+                  </div>
+                  <div>
+                    <h3 class="h4">The Godfather (1972)</h3>
+                    <p class="text-dark mt-2">January 15, 2024 - 7:00 PM</p>
+                  </div>
+                </div>
+                <p class="mt-4">
+                  Join us for a special screening of this classic masterpiece, 
+                  followed by a discussion about its impact on cinema.
+                </p>
+              </div>
+
+              <!-- Event Card 2 -->
+              <div class="mb-8 rounded-lg border border-border p-6 shadow-lg">
+                <div class="flex items-center gap-4">
+                  <div class="text-dark">
+                    <FaCalendar size={24} />
+                  </div>
+                  <div>
+                    <h3 class="h4">Citizen Kane (1941)</h3>
+                    <p class="text-dark mt-2">February 1, 2024 - 7:00 PM</p>
+                  </div>
+                </div>
+                <p class="mt-4">
+                  Special presentation with guest speaker on the revolutionary 
+                  cinematography techniques used in this landmark film.
+                </p>
+              </div>
+            </div>
+
+            <!-- Calendar Content -->
+            <div class="content">
+              <Content />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base> 

@@ -1,0 +1,52 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import config from "@/config/config.json";
+
+const pageTitle = "Login";
+---
+
+<Base title={pageTitle}>
+  <PageHeader title={pageTitle} />
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-6">
+          <div class="content">
+            <form class="shadow rounded p-6 bg-white">
+              <div class="mb-6">
+                <label for="email" class="form-label">
+                  Email Address
+                </label>
+                <input 
+                  id="email" 
+                  type="email" 
+                  class="form-input w-full" 
+                  placeholder="john@example.com" 
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label for="password" class="form-label">
+                  Password
+                </label>
+                <input 
+                  id="password" 
+                  type="password" 
+                  class="form-input w-full" 
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary w-full">
+                Login
+              </button>
+              <p class="text-center mt-4">
+                <a href="#" class="text-primary">Forgot Password?</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base> 

@@ -1,0 +1,53 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+
+const pageTitle = "Members";
+const pageDescription = "Join our community of film enthusiasts";
+---
+
+<Base title={pageTitle}>
+  <PageHeader title={pageTitle} />
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <h2>Membership Benefits</h2>
+            <ul class="mt-4 list-disc pl-4 space-y-2">
+              <li>Access to exclusive screenings</li>
+              <li>Monthly newsletter with curated film recommendations</li>
+              <li>Participate in post-screening discussions</li>
+              <li>Vote on future film selections</li>
+              <li>Discounted tickets for special events</li>
+            </ul>
+
+            <h3 class="mt-8 mb-4">Membership Levels</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Regular Membership -->
+              <div class="p-6 bg-theme-light rounded">
+                <h4 class="text-xl font-bold">Regular Member</h4>
+                <p class="mt-2">$50/year</p>
+                <ul class="mt-4 list-disc pl-4">
+                  <li>All standard benefits</li>
+                  <li>One guest pass per quarter</li>
+                </ul>
+              </div>
+
+              <!-- Premium Membership -->
+              <div class="p-6 bg-theme-light rounded">
+                <h4 class="text-xl font-bold">Premium Member</h4>
+                <p class="mt-2">$100/year</p>
+                <ul class="mt-4 list-disc pl-4">
+                  <li>All standard benefits</li>
+                  <li>Three guest passes per quarter</li>
+                  <li>Early access to special events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base> 

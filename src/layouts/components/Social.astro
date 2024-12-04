@@ -1,28 +1,84 @@
 ---
-const { source, className } = Astro.props;
-import DynamicIcon from "@/helpers/DynamicIcon";
+import social from "@/config/social.json";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaGithub,
+  FaGitlab,
+  FaDiscord,
+  FaSlack,
+  FaMedium,
+  FaCodepen,
+  FaBitbucket,
+  FaDribbble,
+  FaBehance,
+  FaPinterest,
+  FaSoundcloud,
+  FaTumblr,
+  FaReddit,
+  FaVk,
+  FaWhatsapp,
+  FaSnapchat,
+  FaVimeo,
+  FaRss,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarker,
+  FaGlobe
+} from "react-icons/fa";
 
-export interface ISocial {
-  name: string;
-  icon: string;
-  link: string;
-}
+const {
+  className
+} = Astro.props;
+
+// Map of social platform names to their icons
+const icons = {
+  facebook: FaFacebook,
+  twitter: FaTwitter,
+  instagram: FaInstagram,
+  youtube: FaYoutube,
+  linkedin: FaLinkedin,
+  github: FaGithub,
+  gitlab: FaGitlab,
+  discord: FaDiscord,
+  slack: FaSlack,
+  medium: FaMedium,
+  codepen: FaCodepen,
+  bitbucket: FaBitbucket,
+  dribbble: FaDribbble,
+  behance: FaBehance,
+  pinterest: FaPinterest,
+  soundcloud: FaSoundcloud,
+  tumblr: FaTumblr,
+  reddit: FaReddit,
+  vk: FaVk,
+  whatsapp: FaWhatsapp,
+  snapchat: FaSnapchat,
+  vimeo: FaVimeo,
+  rss: FaRss,
+  email: FaEnvelope,
+  phone: FaPhone,
+  address: FaMapMarker,
+  website: FaGlobe,
+};
 ---
 
-<ul class={className}>
-  {
-    source.map((social: ISocial) => (
-      <li>
-        <a
-          aria-label={social.name}
-          href={social.link}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
-          <span class="sr-only">{social.name}</span>
-          <DynamicIcon className="inline-block" icon={social.icon} />
-        </a>
-      </li>
-    ))
-  }
+<ul class={`social-icons ${className}`}>
+  {Object.entries(social).map(([name, link]) => (
+    <li class="inline-block">
+      <a
+        aria-label={name}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-center leading-9 text-white hover:bg-primary-dark"
+      >
+        <span class="sr-only">{name}</span>
+        {icons[name] && <icons[name] />}
+      </a>
+    </li>
+  ))}
 </ul>
